@@ -2,12 +2,10 @@ package com.myapp.addressms.controllers;
 
 import com.myapp.addressms.entities.Address;
 import com.myapp.addressms.services.AddressService;
+import com.myapp.addressms.tools.dto.AddressDto;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.Optional;
@@ -36,5 +34,18 @@ public class AddressController {
         }
         return new ResponseEntity<>("Address not found !" , HttpStatus.NOT_FOUND);
     }
+
+    // Add new address :
+    @PostMapping
+    public ResponseEntity<Object>  add(@RequestBody AddressDto addressDto) {
+        Address address = addressService.addAddress(addressDto);
+        if(address != null) {
+            return new ResponseEntity<>(address , HttpStatus.CREATED);
+        }
+        return new ResponseEntity<>("Address not added" , HttpStatus.BAD_REQUEST);
+    }
+
+
+
 
 }
