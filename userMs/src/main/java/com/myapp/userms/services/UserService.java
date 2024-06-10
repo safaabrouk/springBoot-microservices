@@ -1,2 +1,4 @@
-package com.myapp.userms.services;public interface UserService {
+package com.myapp.userms.services;
+
+public interface UserService {
 }
