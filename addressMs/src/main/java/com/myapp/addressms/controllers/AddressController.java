@@ -56,6 +56,16 @@ public class AddressController {
         return new ResponseEntity<>("Address not updated" , HttpStatus.NOT_FOUND);
     }
 
+    // Delete address:
+    @DeleteMapping("/{id}")
+    public ResponseEntity<Object>  update(@PathVariable int id) {
+        boolean deleted = addressService.deleteAddress(id);
+        if(deleted) {
+            return new ResponseEntity<>("Address deleted successfully" , HttpStatus.OK);
+        }
+        return new ResponseEntity<>("Address not deleted" , HttpStatus.NOT_FOUND);
+    }
+
 
 
 }
