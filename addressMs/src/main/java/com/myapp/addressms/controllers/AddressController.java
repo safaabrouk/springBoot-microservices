@@ -46,14 +46,16 @@ public class AddressController {
     }
 
 
-    // Add new address :
+    // update address :
     @PutMapping("/{id}")
     public ResponseEntity<Object>  update(@PathVariable int id, @RequestBody AddressDto addressDto) {
         Address address = addressService.updateAddress(id,addressDto);
         if(address != null) {
             return new ResponseEntity<>(address , HttpStatus.OK);
         }
-        return new ResponseEntity<>("Address not added" , HttpStatus.NOT_FOUND);
+        return new ResponseEntity<>("Address not updated" , HttpStatus.NOT_FOUND);
     }
+
+
 
 }
