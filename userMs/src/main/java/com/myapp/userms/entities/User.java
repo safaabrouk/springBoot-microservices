@@ -2,6 +2,7 @@ package com.myapp.userms.entities;
 
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 public class User {
 
     @Id
@@ -22,6 +24,6 @@ public class User {
     private String email;
     private String password;
     private Date birthDate;
-    private String idAddress;
+    private int idAddress;
 
 }
