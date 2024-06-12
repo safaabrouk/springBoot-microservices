@@ -65,7 +65,8 @@ public class UserServiceImp implements UserService {
     @Override
     public UserResponseDto addUser(UserRequestDto userRequestDto) {
         // Add address
-        Address addressEntity = new Address(0,"street test","Casablanca","Maroc");
+        Address addressEntity = new Address(0,userRequestDto.getAddress().getStreet(),
+                userRequestDto.getAddress().getCity(),userRequestDto.getAddress().getCity());
         ResponseEntity<Address> addressResponse = restTemplate.postForEntity(addressUrl, addressEntity, Address.class);
         if(addressResponse.getStatusCode().is2xxSuccessful()){
             log.info("Address response : {}",addressResponse);
