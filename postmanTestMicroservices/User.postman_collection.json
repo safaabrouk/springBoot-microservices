@@ -1,0 +1,138 @@
+{
+	"info": {
+		"_postman_id": "6b16552c-ce91-4604-b5d3-57094e021e4b",
+		"name": "User",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "16901874"
+	},
+	"item": [
+		{
+			"name": "getAll",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/user/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"user",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getOne",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"John\",\r\n    \"lastName\":\"Doe\",\r\n    \"email\":\"john.doe@example.com\",\r\n    \"password\":\"***********\",\r\n    \"birthDate\":\"2019-04-28T14:45:15\",\r\n    \"address\": {\r\n        \"street\": \"street\",\r\n        \"city\": \"city\",\r\n        \"country\": \"country\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/user",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"user"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\":\"John up\",\r\n    \"lastName\":\"Doe up\",\r\n    \"email\":\"john.doe_up@example.com\",\r\n    \"password\":\"*****up******\",\r\n    \"birthDate\":\"2019-04-28T14:45:15\",\r\n    \"address\" : {\r\n        \"id\": 15,\r\n        \"street\": \"street up\",\r\n        \"city\": \"city up\",\r\n        \"country\": \"country up\"\r\n\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8082/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8082/api/user/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8082",
+					"path": [
+						"api",
+						"user",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"variable": [
+		{
+			"key": "addressPath",
+			"value": "http://localhost:8080/api/address"
+		}
+	]
+}
