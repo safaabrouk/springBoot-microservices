@@ -1,5 +1,6 @@
 package com.myapp.userms.tools.dto;
 
+import com.myapp.userms.tools.extrenal.Address;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -16,4 +17,5 @@ public class UserRequestDto {
     private String email;
     private String password;
     private Date birthDate;
+    private Address address;
 }

@@ -37,8 +37,8 @@ public class UserRepositoryTest implements CommandLineRunner {
         }
         // -----------------------------------------------------------------------
 
-        System.out.println("User 1 : "+userRepository.save(u));
-        System.out.println("Get User 1 : "+userRepository.findById(1).orElse(null));
+        //System.out.println("User 1 : "+userRepository.save(u));
+        //System.out.println("Get User 1 : "+userRepository.findById(1).orElse(null));
 
     }
 }
